@@ -1,0 +1,52 @@
+<!--
+  ~ Hibernate, Relational Persistence for Idiomatic Java
+  ~
+  ~ License: GNU Lesser General Public License (LGPL), version 2.1 or later.
+  ~ See the lgpl.txt file in the root directory or <http://www.gnu.org/licenses/lgpl-2.1.html>.
+  -->
+  
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        
+        
+        <!--
+  Database Configurations(Modify accordingly)
+  -->
+        
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.username">userDB2</property>
+        <property name="hibernate.connection.password">password</property>
+        <property name="hibernate.connection.url">jdbc:mysql://52.60.109.91:3306/db2</property>
+        
+        
+ 		<!--
+  Shows SQL commands in console
+  -->
+        <property name="show_sql">true</property>
+        
+        
+     
+        <property name="hibernate.cache.use_query_cache">false</property>
+        <property name="hibernate.cache.region_prefix">hibernate.test</property>
+        
+        <property name="hibernate.jdbc.use_streams_for_binary">true</property>
+        
+        <property name="hibernate.jdbc.batch_size">0</property>
+        
+        <property name="hibernate.max_fetch_depth">3</property>
+        
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        
+        <property name="hibernate.generate_statistics">true</property>
+        
+        <mapping class="org.klfmedia.dto.WineDetails"></mapping>
+        
+        
+        
+         </session-factory>
+</hibernate-configuration>
